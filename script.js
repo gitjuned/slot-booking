@@ -1,48 +1,6 @@
 $(function() {
     var idCount= 1;
 
-    // CHECKS HOURS FOR 1st BLOCK
-    // $('#from-hours-1').change(function(){
-    //     console.log(this);
-    //     console.log($(this).val());
-    //     var fromHours = $('#from-hours-1 option:selected').val();
-    //     var toHours = $('#to-hours-1 option:selected').val();
-
-    //     $("#to-hours-1 option").each(function(){
-    //         if($(this).val() < fromHours){
-    //             $(this).prop('disabled',true);
-    //         }
-    //         else{
-    //             $(this).prop('disabled',false);
-    //         }
-    //     });
-    // });
-
-    // CHECKS MINS FOR 1st BLOCK
-    // $('#to-hours-1, #from-mins-1').change(function(){
-    //     console.log("changed value");
-    //     var fromHours = parseInt($('#from-hours-1 option:selected').val(), 10);
-    //     var toHours =  parseInt($('#to-hours-1 option:selected').val(), 10); 
-    //     var fromMins = parseInt($('#from-mins-1 option:selected').val(), 10); 
-    //     var toMins = parseInt( $('#to-mins-1 option:selected').val(), 10);
-
-    //     $("#to-mins-1 option").each(function(){
-    //         if(fromHours == toHours){
-    //             console.log("equal block");
-    //             if($(this).val() <= fromMins){
-    //                 $(this).prop('disabled',true);
-    //             }
-    //             else{
-    //                 $(this).prop('disabled',false);
-    //             }
-    //         }
-    //         else if(fromHours < toHours){
-    //             console.log("greater block");
-    //             $(this).prop('disabled',false);
-    //         }
-    //     });
-    // });
-
     // HOUR VALIDATE FUNCTION
     var hourValidate = function(){
         var newFromHourId = "#from-hours-"+(idCount);
@@ -101,80 +59,6 @@ $(function() {
                 }
             });
         });
-        
-
-        // $(newToHourId).change(function(){
-        //     var fromHours = parseInt($(newFromHourId+' option:selected').val(),10);
-        //     var toHours = parseInt($(newToHourId+' option:selected').val(),10);
-        //     var fromMins = parseInt($(newFromMinId+' option:selected').val(),10);
-        //     var toMins = parseInt($(newToMinId+' option:selected').val(),10);
-    
-        //     $(newToMinId+ " option").each(function(){
-        //         if(fromHours == toHours){
-        //             console.log("Equal Block");
-        //             if($(this).val() <= fromMins){
-        //                 $(this).prop('disabled',true);
-        //             }
-        //             else{
-        //                 $(this).prop('disabled',false);
-        //             }
-        //         }
-        //         else if(fromHours < toHours){
-        //             console.log("Greater Block");
-        //             $(this).prop('disabled',false);
-        //         }
-        //     });
-        // });
-        
-        // $(newFromHourId).change(function(){
-
-        //     console.log("to hour id");
-        //     var fromHours = parseInt($(newFromHourId+' option:selected').val(),10);
-        //     var toHours = parseInt($(newToHourId+' option:selected').val(),10);
-        //     var fromMins = parseInt($(newFromMinId+' option:selected').val(),10);
-        //     var toMins = parseInt($(newToMinId+' option:selected').val(),10);
-    
-        //     $(newToMinId+ " option").each(function(){
-        //         if(fromHours == toHours){
-        //             console.log("Equal Block");
-        //             if($(this).val() <= fromMins){
-        //                 $(this).prop('disabled',true);
-        //             }
-        //             else{
-        //                 $(this).prop('disabled',false);
-        //             }
-        //         }
-        //         else if(fromHours < toHours){
-        //             console.log("Greater Block");
-        //             $(this).prop('disabled',false);
-        //         }
-        //     });
-        // });
-    
-        // $(newFromMinId).change(function(){
-        //     console.log("to hour id");
-        //     var fromHours = parseInt($(newFromHourId+' option:selected').val(),10);
-        //     var toHours = parseInt($(newToHourId+' option:selected').val(),10);
-        //     var fromMins = parseInt($(newFromMinId+' option:selected').val(),10);
-        //     var toMins = parseInt($(newToMinId+' option:selected').val(),10);
-    
-        //     $(newToMinId+ " option").each(function(){
-        //         if(fromHours == toHours){
-        //             console.log("Equal Block");
-        //             if($(this).val() <= fromMins){
-        //                 $(this).prop('disabled',true);
-        //             }
-        //             else{
-        //                 $(this).prop('disabled',false);
-        //             }
-        //         }
-        //         else if(fromHours < toHours){
-        //             console.log("Greater Block");
-        //             $(this).prop('disabled',false);
-        //         }
-        //     });
-        // });
-
         
     };
 
