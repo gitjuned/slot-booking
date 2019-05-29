@@ -64,6 +64,7 @@ $(function() {
 
     // ON CLICK ON ADD BUTTON
     $(".add-btn").click(function(){
+        var currentDay = $(this).data('day');
         var fromDay = ".from-"+$(this).data('day');
         var toDay = ".to-"+$(this).data('day');
     
@@ -74,7 +75,7 @@ $(function() {
             '<div class="from-content">'+
                 '<div class="col-sm-1">' +
                 '<h6>HOURS</h6>'+
-                '<select class="from-hours" id="from-hours-'+idCount+'">' +
+                '<select class="from-hours '+currentDay+'-from-hours '+currentDay+'" id="from-hours-'+idCount+'">' +
                 '<option value="10">10</option>' +
                 '<option value="11">11</option>'+
                 '<option value="12">12</option>'+
@@ -88,7 +89,7 @@ $(function() {
             
                 '<div class="col-sm-1">'+
                 '<h6>MINS</h6>'+
-                '<select class="from-mins" id="from-mins-'+idCount+'">'+
+                '<select class="from-mins '+currentDay+'-from-mins '+currentDay+'" id="from-mins-'+idCount+'">'+
                 '<option value="5">5</option>'+
                 '<option value="10">10</option>'+
                 '<option value="15">15</option>'+
@@ -110,7 +111,7 @@ $(function() {
             '<div class="to-content">'+
                 '<div class="col-sm-1">' +
                 '<h6>HOURS</h6>'+
-                '<select class="to-hours" id="to-hours-'+idCount+'">' +
+                '<select class="to-hours '+currentDay+'-to-hours '+currentDay+'" id="to-hours-'+idCount+'">' +
                 '<option value="10">10</option>' +
                 '<option value="11">11</option>'+
                 '<option value="12">12</option>'+
@@ -124,7 +125,7 @@ $(function() {
             
                 '<div class="col-sm-1">'+
                 '<h6>MINS</h6>'+
-                '<select class="to-mins" id="to-mins-'+idCount+'">'+
+                '<select class="to-mins '+currentDay+'-to-mins '+currentDay+'" id="to-mins-'+idCount+'">'+
                 '<option value="5">5</option>'+
                 '<option value="10">10</option>'+
                 '<option value="15">15</option>'+
@@ -147,6 +148,12 @@ $(function() {
 
     });
 
-    
+
+    $(".submit-btn").click(function(){
+        $(".monday").each(function() {
+            console.log("Monday Appointment Slots: "+$(this).val());
+        });
+    });
+        
 }); // DOCUMENT READY
 
