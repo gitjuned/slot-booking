@@ -1,0 +1,16 @@
+.day{
+    padding-bottom: 30px;
+    border-bottom: solid 1px orange;
+}
+.day h3{
+    display: inline-block;
+    font-weight: 800;
+}
+.day button{
+    margin-top: 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: orange;
+    border-radius: 0px;
+    border: solid 1px black;
+}

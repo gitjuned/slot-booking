@@ -1,0 +1,34 @@
+<html>
+<head><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        function addCounter() {     //this function set the counter variable value static.
+        var cust_count = 0;
+            return function() {
+                cust_count++;
+                return cust_count;   //return the incremented value on click
+            };
+        }
+    var countVar = addCounter();
+        $("#add-more").click(function(){   // click function of element having id named "add-more"
+            var j = countVar();         // get the incremented value of counter from previous counter.
+            $("#add-more-field").append('<li>'  //append the html with li tags inside the div/element having id named "add-more-field"
+              +'<div class="col-sm-12">'
+                +'<label>Drop Off Address or Landmark  </label>'
+                +'<input type="text" id="anotherdropoffAddrr_'+j+'" name="anotherdropoffAddrr[]" class="form-control">'   
+                       // Here "j" will increased dynamically every time user clicked on the button.
+              +'</div>'
+            +'</li>');
+        });
+     });
+</script>
+</head>
+<body>
+    <div>
+    
+    <a id="add-more" class="add_more-stop btn-Rmore" href="javascript:void(0);">
+        <span>Add Another Stop</span>
+    </a>
+    <ul id="add-more-field"></ul>
+    </div>
+</body>

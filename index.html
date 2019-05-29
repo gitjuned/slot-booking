@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Javascript Assignment</title>
+</head>
+<body>
+
+
+    <div class="container"> <!-- CONTAINER -->
+
+        <!-- MONDAY -->
+        <div class="row"> <!-- ROW1 -->
+            <div class="day monday">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>MONDAY</h3>
+                        <button class="pull-right add-btn" data-day="monday">ADD SLOT</button>
+                    </div>
+                </div>
+                <div class="row from-row">
+
+                    <div class="col-sm-1">
+                        <h6>FROM</h6>
+                    </div>    
+                
+                    <div class="from-content-wrapper from-monday">
+                        <!-- <div class="from-content" id="f1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="from-hours" id="from-hours-1">
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="from-mins" id="from-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div>          
+                        </div> -->
+                    </div>
+                    
+                </div>  <!-- FROM -->
+
+
+                <div class="row to-row">  <!-- TO -->
+                    <div class="col-sm-1">
+                        <h6>TO</h6>
+                    </div>    
+                    <div class="to-content-wrapper to-monday">
+                        <!-- <div class="to-content" id="t1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="to-hours" id="to-hours-1">
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="to-mins" id="to-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div> 
+                        </div> -->
+                    </div>  
+                </div>  <!-- TO -->
+
+            </div>  <!-- DAY MONDAY -->
+        </div>  <!-- ROW1 -->
+
+
+        <!-- TUESDAY -->
+        <div class="row">  <!-- ROW2-->
+            <div class="day tuesday">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>TUESDAY</h3>
+                        <button class="pull-right add-btn" data-day="tuesday">ADD SLOT</button>
+                    </div>
+                </div>
+                <div class="row from-row">
+
+                    <div class="col-sm-1">
+                        <h6>FROM</h6>
+                    </div>    
+                
+                    <div class="from-content-wrapper from-tuesday">
+                        
+                    </div>
+                    
+                </div>  <!-- FROM -->
+
+
+                <div class="row to-row">  <!-- TO -->
+                    <div class="col-sm-1">
+                        <h6>TO</h6>
+                    </div>    
+                    
+                    <div class="to-content-wrapper to-tuesday">
+                        <!-- <div class="to-content" id="t1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="to-hours" id="to-hours-1">
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="to-mins" id="to-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div> 
+                        </div> -->
+                    </div>  
+                </div>  <!-- TO -->
+
+            </div>  <!-- DAY TUESDAY -->
+        </div>  <!-- ROW2 -->
+
+
+        <!-- WEDNESDAY -->
+        <div class="row">  <!-- ROW3-->
+            <div class="day wednesday">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>WEDNESDAY</h3>
+                        <button class="pull-right add-btn" data-day="wednesday">ADD SLOT</button>
+                    </div>
+                </div>
+                <div class="row from-row">
+
+                    <div class="col-sm-1">
+                        <h6>FROM</h6>
+                    </div>    
+                
+                    <div class="from-content-wrapper from-wednesday">
+                        <!-- <div class="from-content" id="f1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="from-hours" id="from-hours-1">
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="from-mins" id="from-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div>          
+                        </div> -->
+                    </div>
+                    
+                </div>  <!-- FROM -->
+
+
+                <div class="row to-row">  <!-- TO -->
+                    <div class="col-sm-1">
+                        <h6>TO</h6>
+                    </div>    
+                    
+                    <div class="to-content-wrapper to-wednesday">
+                        <!-- <div class="to-content" id="t1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="to-hours" id="to-hours-1">
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="to-mins" id="to-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div> 
+                        </div> -->
+                    </div>  
+                </div>  <!-- TO -->
+
+            </div>  <!-- DAY TUESDAY -->
+        </div>  <!-- ROW3 -->
+
+        <!-- THURSDAY -->
+        <div class="row">  <!-- ROW4-->
+            <div class="day thursday">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>THURSDAY</h3>
+                        <button class="pull-right add-btn" data-day="thursday">ADD SLOT</button>
+                    </div>
+                </div>
+                <div class="row from-row">
+
+                    <div class="col-sm-1">
+                        <h6>FROM</h6>
+                    </div>    
+                
+                    <div class="from-content-wrapper from-thursday">
+                        <!-- <div class="from-content" id="f1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="from-hours" id="from-hours-1">
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="from-mins" id="from-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div> 
+                        </div> -->
+                    </div>
+                    
+                </div>  <!-- FROM -->
+
+
+                <div class="row to-row">  <!-- TO -->
+                    <div class="col-sm-1">
+                        <h6>TO</h6>
+                    </div>    
+                    
+                    <div class="to-content-wrapper to-thursday">
+                        <!-- <div class="to-content" id="t1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="to-hours" id="to-hours-1">
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="to-mins" id="to-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div> 
+                        </div> -->
+                    </div>  
+                </div>  <!-- TO -->
+
+            </div>  <!-- DAY TUESDAY -->
+        </div>  <!-- ROW4 -->
+
+
+        <!-- FRIDAY -->
+        <div class="row">  <!-- ROW5-->
+            <div class="day friday">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>FRIDAY</h3>
+                        <button class="pull-right add-btn" data-day="friday">ADD SLOT</button>
+                    </div>
+                </div>
+                <div class="row from-row">
+
+                    <div class="col-sm-1">
+                        <h6>FROM</h6>
+                    </div>    
+                
+                    <div class="from-content-wrapper from-friday">
+                        <!-- <div class="from-content" id="f1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="from-hours" id="from-hours-1">
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="from-mins" id="from-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div>          
+                        </div> -->
+                    </div>
+                    
+                </div>  <!-- FROM -->
+
+
+                <div class="row to-row">  <!-- TO -->
+                    <div class="col-sm-1">
+                        <h6>TO</h6>
+                    </div>    
+                    
+                    <div class="to-content-wrapper to-friday">
+                        <!-- <div class="to-content" id="t1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="to-hours" id="to-hours-1">
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="to-mins" id="to-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div> 
+                        </div> -->
+                    </div>  
+                </div>  <!-- TO -->
+
+            </div>  <!-- DAY TUESDAY -->
+        </div>  <!-- ROW5 -->
+
+
+        <!-- SATURDAY -->
+        <div class="row">  <!-- ROW6-->
+            <div class="day saturday">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>SATURDAY</h3>
+                        <button class="pull-right add-btn" data-day="saturday">ADD SLOT</button>
+                    </div>
+                </div>
+                <div class="row from-row">
+
+                    <div class="col-sm-1">
+                        <h6>FROM</h6>
+                    </div>    
+                
+                    <div class="from-content-wrapper from-saturday">
+                        <!-- <div class="from-content" id="f1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="from-hours" id="from-hours-1">
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="from-mins" id="from-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div>          
+                        </div> -->
+                    </div>
+                    
+                </div>  <!-- FROM -->
+
+
+                <div class="row to-row">  <!-- TO -->
+                    <div class="col-sm-1">
+                        <h6>TO</h6>
+                    </div>    
+                    
+                    <div class="to-content-wrapper to-saturday">
+                        <!-- <div class="to-content" id="t1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="to-hours" id="to-hours-1">
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="to-mins" id="to-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div> 
+                        </div> -->
+                    </div>  
+                </div>  <!-- TO -->
+
+            </div>  <!-- DAY TUESDAY -->
+        </div>  <!-- ROW6 -->
+
+
+        <!-- SUNDAY -->
+        <div class="row">  <!-- ROW7-->
+            <div class="day sunday">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>SUNDAY</h3>
+                        <button class="pull-right add-btn" data-day="sunday">ADD SLOT</button>
+                    </div>
+                </div>
+                <div class="row from-row">
+
+                    <div class="col-sm-1">
+                        <h6>FROM</h6>
+                    </div>    
+                
+                    <div class="from-content-wrapper from-sunday">
+                        <!-- <div class="from-content" id="f1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="from-hours" id="from-hours-1">
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="from-mins" id="from-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div>          
+                        </div> -->
+                    </div>
+                    
+                </div>  <!-- FROM -->
+
+
+                <div class="row to-row">  <!-- TO -->
+                    <div class="col-sm-1">
+                        <h6>TO</h6>
+                    </div>    
+                    
+                    <div class="to-content-wrapper to-sunday">
+                        <!-- <div class="to-content" id="t1">
+                            <div class="col-sm-1">
+                                <h6>HOURS</h6>
+                                <select class="to-hours" id="to-hours-1">
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                </select>
+                            </div>    
+        
+                            <div class="col-sm-1">
+                                <h6>MINS</h6>
+                                <select class="to-mins" id="to-mins-1">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                            </div> 
+                        </div> -->
+                    </div>  
+                </div>  <!-- TO -->
+
+            </div>  <!-- DAY TUESDAY -->
+        </div>  <!-- ROW7 -->
+
+
+
+    </div> <!-- CONTAINER -->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
