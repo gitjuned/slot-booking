@@ -12,8 +12,8 @@ $(function() {
         // VALIDATES WHEN FROM HOUR IS CHANGED
         $(newFromHourId).change(function(){
             var fromHours = $(newFromHourId+' option:selected').val();
-            var toHours = $(newToHourId+' option:selected').val();
-    
+            var toHours = $(newToHourId+' option:selected').val(); 
+
             $(newToHourId+ " option").each(function(){
                 if($(this).val() < fromHours){
                     $(this).prop('disabled',true);
@@ -42,12 +42,25 @@ $(function() {
             var toHours = parseInt($(newToHourId+' option:selected').val(),10);
             var fromMins = parseInt($(newFromMinId+' option:selected').val(),10);
             var toMins = parseInt($(newToMinId+' option:selected').val(),10);
-    
+           
+
             $(newToMinId+ " option").each(function(){
+
+                // var fromHours = parseInt($(newFromHourId+' option:selected').val(),10);
+                // var toHours = parseInt($(newToHourId+' option:selected').val(),10);
+                // var fromMins = parseInt($(newFromMinId+' option:selected').val(),10);
+                // var toMins = parseInt($(newToMinId+' option:selected').val(),10);
+                
                 if(fromHours == toHours){
                     console.log("Equal Block");
                     if($(this).val() <= fromMins){
                         $(this).prop('disabled',true);
+                        console.log("----------------------------");
+                        console.log(toMins)
+                        toMins = fromMins+5;
+                        console.log("after addition"+toMins);
+                        $(newToMinId+" option[value="+toMins+"]").attr("selected",true);
+                        
                     }
                     else{
                         $(this).prop('disabled',false);
@@ -68,8 +81,8 @@ $(function() {
         var fromDay = ".from-"+$(this).data('day');
         var toDay = ".to-"+$(this).data('day');
     
-        console.log(fromDay); 
-        console.log(toDay);       
+        console.log("SLOT ADDED FOR: "+fromDay); 
+        console.log("SLOT ADDED FOR: "+toDay);       
     
         $(fromDay).append(
             '<div class="from-content">'+
@@ -150,9 +163,50 @@ $(function() {
 
 
     $(".submit-btn").click(function(){
+        console.log("****************************** VALUES ******************************");
+        console.log("**********************************************************************");
+
+        console.log("++++++++++++++++++ MONDAY +++++++++++++++++++++++");
         $(".monday").each(function() {
             console.log("Monday Appointment Slots: "+$(this).val());
         });
+
+
+        console.log("++++++++++++++++++++ TUESDAY +++++++++++++++++++++");
+        $(".tuesday").each(function() {
+            console.log("Tuesday Appointment Slots: "+$(this).val());       
+        });
+
+        console.log("+++++++++++++++++++++++ WEDNESDAY ++++++++++++++++++");
+        $(".wednesday").each(function() {
+            console.log("Wednesday Appointment Slots: "+$(this).val());    
+        });
+
+        console.log("+++++++++++++++++++++++ THURSDAY ++++++++++++++++++");
+        $(".thursday").each(function() {
+            console.log("Thursday Appointment Slots: "+$(this).val());    
+        });
+
+        console.log("++++++++++++++++++++++++ FRIDAY +++++++++++++++++");
+        $(".friday").each(function() {
+            console.log("Friday Appointment Slots: "+$(this).val());  
+        });
+
+        console.log("+++++++++++++++++++++++ SATURDAY ++++++++++++++++++");
+        $(".saturday").each(function() {
+            console.log("Saturday Appointment Slots: "+$(this).val());
+        });
+
+        console.log("+++++++++++++++++++ SUNDAY ++++++++++++++++++++++");
+        $(".sunday").each(function() {
+            console.log("Sunday Appointment Slots: "+$(this).val());
+        });
+
+
+        console.log("****************************** VALUES ******************************");
+        console.log("**********************************************************************");
+
+
     });
         
 }); // DOCUMENT READY
