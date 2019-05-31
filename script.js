@@ -11,8 +11,10 @@ $(function() {
         
         // VALIDATES WHEN FROM HOUR IS CHANGED
         $(newFromHourId).change(function(){
-            var fromHours = $(newFromHourId+' option:selected').val();
-            var toHours = $(newToHourId+' option:selected').val(); 
+            var fromHours = parseInt($(newFromHourId+' option:selected').val(),10);
+            var toHours = parseInt($(newToHourId+' option:selected').val(),10); 
+            var newFromHours = fromHours+1;
+            $(newToHourId+" option[value="+newFromHours+"]").attr("selected",true);
 
             $(newToHourId+ " option").each(function(){
                 if($(this).val() < fromHours){
@@ -33,7 +35,6 @@ $(function() {
         var newToMinId = "#to-mins-"+(idCount);
 
         // VALIDATES WHEN TO HOUR OR FROM MIN IS CHANGED
-
         var changeSelector = newToHourId+", "+ newFromHourId + ", "+newFromMinId;
         console.log(changeSelector);
         $(changeSelector).change(function(){
@@ -45,12 +46,7 @@ $(function() {
            
 
             $(newToMinId+ " option").each(function(){
-
-                // var fromHours = parseInt($(newFromHourId+' option:selected').val(),10);
-                // var toHours = parseInt($(newToHourId+' option:selected').val(),10);
-                // var fromMins = parseInt($(newFromMinId+' option:selected').val(),10);
-                // var toMins = parseInt($(newToMinId+' option:selected').val(),10);
-                
+            
                 if(fromHours == toHours){
                     console.log("Equal Block");
                     if($(this).val() <= fromMins){
@@ -74,6 +70,7 @@ $(function() {
         });
         
     };
+
 
     // ON CLICK ON ADD BUTTON
     $(".add-btn").click(function(){
@@ -167,38 +164,121 @@ $(function() {
         console.log("**********************************************************************");
 
         console.log("++++++++++++++++++ MONDAY +++++++++++++++++++++++");
-        $(".monday").each(function() {
+        var mondayfromhours =[];
+        var mondayfrommins =[];
+        var mondaytohours =[];
+        var mondaytomins =[];
+
+        $(".monday-from-hours").each(function() {
+            var response=$(this).val();
+
+            mondayfromhours.push(response);
+            console.log("Monday FROM hour array");
+            console.log(mondayfromhours);
+            
+            $(".monday-from").append("Hours: "+response);
             console.log("Monday Appointment Slots: "+$(this).val());
         });
+
+        $(".monday-from-mins").each(function() {
+            var response=$(this).val();
+
+            mondayfrommins.push(response);
+            console.log("Monday FROM Mins array");
+            console.log(mondayfrommins);
+            
+            $(".monday-from").append(" Mins: "+response);
+            console.log("Monday Appointment Slots: "+$(this).val());
+        });
+
+        $(".monday-to-hours").each(function() {
+            var response=$(this).val();
+
+            mondaytohours.push(response);
+            console.log("Monday TO HOURS array");
+            console.log(mondaytohours);
+
+            $(".monday-to").append("Hours: "+response);
+            console.log("Monday Appointment Slots: "+$(this).val());
+        });
+
+        $(".monday-to-mins").each(function() {
+            var response=$(this).val();
+
+            mondaytomins.push(response);
+            console.log("Monday TO HOURS array");
+            console.log(mondaytomins);
+
+            $(".monday-to").append(" Mins: "+response);
+            console.log("Monday Appointment Slots: "+$(this).val());
+        });
+    
+        console.log("MONDAY FROM HOURS");
+        console.log(mondayfromhours);
+        console.log("MONDAY FROM MINS");
+        console.log(mondayfrommins);
+        console.log("MONDAY TO HOURS");
+        console.log(mondaytohours);
+        console.log("MONDAY TO MINS");
+        console.log(mondaytomins);
+
+        for(let i =0; i<mondayfromhours.length; i++){
+
+            var arrayfromhours = mondayfromhours[i];
+            var arrayfrommins = mondayfrommins[i];
+            var arraytohours = mondaytohours[i];
+            var arraytomins = mondaytomins[i];
+
+            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
+            $(".monday-data").append(slottext + " , ");
+
+        }
+
+
+
+
+
 
 
         console.log("++++++++++++++++++++ TUESDAY +++++++++++++++++++++");
         $(".tuesday").each(function() {
+            var response=$(this).val();
+            $(".tuesday-data").append(response);
             console.log("Tuesday Appointment Slots: "+$(this).val());       
         });
 
         console.log("+++++++++++++++++++++++ WEDNESDAY ++++++++++++++++++");
         $(".wednesday").each(function() {
+            var response=$(this).val();
+            $(".wednesday-data").append(response);
             console.log("Wednesday Appointment Slots: "+$(this).val());    
         });
 
         console.log("+++++++++++++++++++++++ THURSDAY ++++++++++++++++++");
         $(".thursday").each(function() {
+            var response=$(this).val();
+            $(".thursday-data").append(response);
             console.log("Thursday Appointment Slots: "+$(this).val());    
         });
 
         console.log("++++++++++++++++++++++++ FRIDAY +++++++++++++++++");
         $(".friday").each(function() {
+            var response=$(this).val();
+            $(".friday-data").append(response);
             console.log("Friday Appointment Slots: "+$(this).val());  
         });
 
         console.log("+++++++++++++++++++++++ SATURDAY ++++++++++++++++++");
         $(".saturday").each(function() {
+            var response=$(this).val();
+            $(".saturday-data").append(response);
             console.log("Saturday Appointment Slots: "+$(this).val());
         });
 
         console.log("+++++++++++++++++++ SUNDAY ++++++++++++++++++++++");
         $(".sunday").each(function() {
+            var response=$(this).val();
+            $(".sunday-data").append(response);
             console.log("Sunday Appointment Slots: "+$(this).val());
         });
 
