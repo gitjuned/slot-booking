@@ -75,7 +75,7 @@ $(function() {
     // ON CLICK ON ADD BUTTON
     $(".add-btn").click(function(){
         var currentDay = $(this).data('day');
-        var fromDay = ".from-"+$(this).data('day');
+        var fromDay = ".from-"+currentDay;
         var toDay = ".to-"+$(this).data('day');
     
         console.log("SLOT ADDED FOR: "+fromDay); 
@@ -158,69 +158,33 @@ $(function() {
 
     });
 
-
-    $(".submit-btn").click(function(){
-        console.log("****************************** VALUES ******************************");
-        console.log("**********************************************************************");
-
-        console.log("++++++++++++++++++ MONDAY +++++++++++++++++++++++");
-        var mondayfromhours =[];
+    function getAndAddData(day){
+    h
+        var day = day
+        var mondayfromhours = [];
         var mondayfrommins =[];
         var mondaytohours =[];
         var mondaytomins =[];
-
         $(".monday-from-hours").each(function() {
             var response=$(this).val();
-
             mondayfromhours.push(response);
-            console.log("Monday FROM hour array");
-            console.log(mondayfromhours);
-            
-            $(".monday-from").append("Hours: "+response);
-            console.log("Monday Appointment Slots: "+$(this).val());
         });
 
         $(".monday-from-mins").each(function() {
             var response=$(this).val();
-
             mondayfrommins.push(response);
-            console.log("Monday FROM Mins array");
-            console.log(mondayfrommins);
-            
-            $(".monday-from").append(" Mins: "+response);
-            console.log("Monday Appointment Slots: "+$(this).val());
         });
 
         $(".monday-to-hours").each(function() {
             var response=$(this).val();
-
             mondaytohours.push(response);
-            console.log("Monday TO HOURS array");
-            console.log(mondaytohours);
-
-            $(".monday-to").append("Hours: "+response);
-            console.log("Monday Appointment Slots: "+$(this).val());
         });
 
         $(".monday-to-mins").each(function() {
             var response=$(this).val();
-
             mondaytomins.push(response);
-            console.log("Monday TO HOURS array");
-            console.log(mondaytomins);
-
-            $(".monday-to").append(" Mins: "+response);
-            console.log("Monday Appointment Slots: "+$(this).val());
         });
     
-        console.log("MONDAY FROM HOURS");
-        console.log(mondayfromhours);
-        console.log("MONDAY FROM MINS");
-        console.log(mondayfrommins);
-        console.log("MONDAY TO HOURS");
-        console.log(mondaytohours);
-        console.log("MONDAY TO MINS");
-        console.log(mondaytomins);
 
         for(let i =0; i<mondayfromhours.length; i++){
 
@@ -230,61 +194,302 @@ $(function() {
             var arraytomins = mondaytomins[i];
 
             var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-            $(".monday-data").append(slottext + " , ");
+            
+            if(i == mondayfromhours.length-1){
+                $(".monday-data").append(slottext + "");
+            }
+            else{
+                $(".monday-data").append(slottext + " , ");
+            }
 
+        }
+
+    }
+
+
+    $(".submit-btn").click(function(){
+        $(".monday-data,.tuesday-data, .wednesday-data,  .thursday-data, .friday-data, .saturday-data, .sunday-data").html("");
+
+
+
+        // MONDAY
+        var mondayfromhours =[];
+        var mondayfrommins =[];
+        var mondaytohours =[];
+        var mondaytomins =[];
+        $(".monday-from-hours").each(function() {
+            var response=$(this).val();
+            mondayfromhours.push(response);
+        });
+
+        $(".monday-from-mins").each(function() {
+            var response=$(this).val();
+            mondayfrommins.push(response);
+        });
+
+        $(".monday-to-hours").each(function() {
+            var response=$(this).val();
+            mondaytohours.push(response);
+        });
+
+        $(".monday-to-mins").each(function() {
+            var response=$(this).val();
+            mondaytomins.push(response);
+        });
+    
+
+        for(let i =0; i<mondayfromhours.length; i++){
+
+            var arrayfromhours = mondayfromhours[i];
+            var arrayfrommins = mondayfrommins[i];
+            var arraytohours = mondaytohours[i];
+            var arraytomins = mondaytomins[i];
+
+            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
+            
+            if(i == mondayfromhours.length-1){
+                $(".monday-data").append(slottext + "");
+            }
+            else{
+                $(".monday-data").append(slottext + " , ");
+            }
+
+        }
+
+        // TUESDAY
+        var tuesdayfromhours =[];
+        var tuesdayfrommins =[];
+        var tuesdaytohours =[];
+        var tuesdaytomins =[];
+
+        $(".tuesday-from-hours").each(function() {
+            var response=$(this).val();
+            tuesdayfromhours.push(response);
+        });
+
+        $(".tuesday-from-mins").each(function() {
+            var response=$(this).val();
+            tuesdayfrommins.push(response);
+        });
+
+        $(".tuesday-to-hours").each(function() {
+            var response=$(this).val();
+            tuesdaytohours.push(response);
+        });
+
+        $(".tuesday-to-mins").each(function() {
+            var response=$(this).val();
+            tuesdaytomins.push(response);
+        });
+    
+
+        for(let i =0; i<tuesdayfromhours.length; i++){
+
+            var arrayfromhours = tuesdayfromhours[i];
+            var arrayfrommins = tuesdayfrommins[i];
+            var arraytohours = tuesdaytohours[i];
+            var arraytomins = tuesdaytomins[i];
+
+            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
+            $(".tuesday-data").append(slottext + " , ");
+        }
+
+
+        // WEDNESDAY
+        var wednesdayfromhours =[];
+        var wednesdayfrommins =[];
+        var wednesdaytohours =[];
+        var wednesdaytomins =[];
+
+        $(".wednesday-from-hours").each(function() {
+            var response=$(this).val();
+            wednesdayfromhours.push(response);
+        });
+
+        $(".wednesday-from-mins").each(function() {
+            var response=$(this).val();
+            wednesdayfrommins.push(response);
+        });
+
+        $(".wednesday-to-hours").each(function() {
+            var response=$(this).val();
+            wednesdaytohours.push(response);
+        });
+
+        $(".wednesday-to-mins").each(function() {
+            var response=$(this).val();
+            wednesdaytomins.push(response);
+        });
+    
+
+        for(let i =0; i<wednesdayfromhours.length; i++){
+
+            var arrayfromhours = wednesdayfromhours[i];
+            var arrayfrommins = wednesdayfrommins[i];
+            var arraytohours = wednesdaytohours[i];
+            var arraytomins = wednesdaytomins[i];
+
+            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
+            $(".wednesday-data").append(slottext + " , ");
+        }
+
+
+        // THURSDAY
+        var thursdayfromhours =[];
+        var thursdayfrommins =[];
+        var thursdaytohours =[];
+        var thursdaytomins =[];
+
+        $(".thursday-from-hours").each(function() {
+            var response=$(this).val();
+            thursdayfromhours.push(response);
+        });
+
+        $(".thursday-from-mins").each(function() {
+            var response=$(this).val();
+            thursdayfrommins.push(response);
+        });
+
+        $(".thursday-to-hours").each(function() {
+            var response=$(this).val();
+            thursdaytohours.push(response);
+        });
+
+        $(".thursday-to-mins").each(function() {
+            var response=$(this).val();
+            thursdaytomins.push(response);
+        });
+    
+
+        for(let i =0; i<thursdayfromhours.length; i++){
+
+            var arrayfromhours = thursdayfromhours[i];
+            var arrayfrommins = thursdayfrommins[i];
+            var arraytohours = thursdaytohours[i];
+            var arraytomins = thursdaytomins[i];
+
+            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
+            $(".thursday-data").append(slottext + " , ");
         }
 
 
 
 
+         // FRIDAY
+         var fridayfromhours =[];
+         var fridayfrommins =[];
+         var fridaytohours =[];
+         var fridaytomins =[];
+ 
+         $(".friday-from-hours").each(function() {
+             var response=$(this).val();
+             fridayfromhours.push(response);
+         });
+ 
+         $(".friday-from-mins").each(function() {
+             var response=$(this).val();
+             fridayfrommins.push(response);
+         });
+ 
+         $(".friday-to-hours").each(function() {
+             var response=$(this).val();
+             fridaytohours.push(response);
+         });
+ 
+         $(".friday-to-mins").each(function() {
+             var response=$(this).val();
+             fridaytomins.push(response);
+         });
+     
+ 
+        for(let i =0; i<fridayfromhours.length; i++){
+
+            var arrayfromhours = fridayfromhours[i];
+            var arrayfrommins = fridayfrommins[i];
+            var arraytohours = fridaytohours[i];
+            var arraytomins = fridaytomins[i];
+
+            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
+            $(".friday-data").append(slottext + " , ");
+        }
 
 
+        // saturday
+        var saturdayfromhours =[];
+        var saturdayfrommins =[];
+        var saturdaytohours =[];
+        var saturdaytomins =[];
 
-        console.log("++++++++++++++++++++ TUESDAY +++++++++++++++++++++");
-        $(".tuesday").each(function() {
+        $(".saturday-from-hours").each(function() {
             var response=$(this).val();
-            $(".tuesday-data").append(response);
-            console.log("Tuesday Appointment Slots: "+$(this).val());       
+            saturdayfromhours.push(response);
         });
 
-        console.log("+++++++++++++++++++++++ WEDNESDAY ++++++++++++++++++");
-        $(".wednesday").each(function() {
+        $(".saturday-from-mins").each(function() {
             var response=$(this).val();
-            $(".wednesday-data").append(response);
-            console.log("Wednesday Appointment Slots: "+$(this).val());    
+            saturdayfrommins.push(response);
         });
 
-        console.log("+++++++++++++++++++++++ THURSDAY ++++++++++++++++++");
-        $(".thursday").each(function() {
+        $(".saturday-to-hours").each(function() {
             var response=$(this).val();
-            $(".thursday-data").append(response);
-            console.log("Thursday Appointment Slots: "+$(this).val());    
+            saturdaytohours.push(response);
         });
 
-        console.log("++++++++++++++++++++++++ FRIDAY +++++++++++++++++");
-        $(".friday").each(function() {
+        $(".saturday-to-mins").each(function() {
             var response=$(this).val();
-            $(".friday-data").append(response);
-            console.log("Friday Appointment Slots: "+$(this).val());  
+            saturdaytomins.push(response);
         });
+    
 
-        console.log("+++++++++++++++++++++++ SATURDAY ++++++++++++++++++");
-        $(".saturday").each(function() {
-            var response=$(this).val();
-            $(".saturday-data").append(response);
-            console.log("Saturday Appointment Slots: "+$(this).val());
-        });
+       for(let i =0; i<saturdayfromhours.length; i++){
 
-        console.log("+++++++++++++++++++ SUNDAY ++++++++++++++++++++++");
-        $(".sunday").each(function() {
-            var response=$(this).val();
-            $(".sunday-data").append(response);
-            console.log("Sunday Appointment Slots: "+$(this).val());
-        });
+           var arrayfromhours = saturdayfromhours[i];
+           var arrayfrommins = saturdayfrommins[i];
+           var arraytohours = saturdaytohours[i];
+           var arraytomins = saturdaytomins[i];
+
+           var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
+           $(".saturday-data").append(slottext + ", ");
+       }
 
 
-        console.log("****************************** VALUES ******************************");
-        console.log("**********************************************************************");
+       // sunday
+       var sundayfromhours =[];
+       var sundayfrommins =[];
+       var sundaytohours =[];
+       var sundaytomins =[];
+
+       $(".sunday-from-hours").each(function() {
+           var response=$(this).val();
+           sundayfromhours.push(response);
+       });
+
+       $(".sunday-from-mins").each(function() {
+           var response=$(this).val();
+           sundayfrommins.push(response);
+       });
+
+       $(".sunday-to-hours").each(function() {
+           var response=$(this).val();
+           sundaytohours.push(response);
+       });
+
+       $(".sunday-to-mins").each(function() {
+           var response=$(this).val();
+           sundaytomins.push(response);
+       });
+   
+
+      for(let i =0; i<sundayfromhours.length; i++){
+
+          var arrayfromhours = sundayfromhours[i];
+          var arrayfrommins = sundayfrommins[i];
+          var arraytohours = sundaytohours[i];
+          var arraytomins = sundaytomins[i];
+
+          var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
+          $(".sunday-data").append(slottext + " , ");
+      }
 
 
     });
