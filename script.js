@@ -72,7 +72,7 @@ $(function() {
     };
 
 
-    // ON CLICK ON ADD BUTTON
+    // ON CLICK OF ADD BUTTON
     $(".add-btn").click(function(){
         var currentDay = $(this).data('day');
         var fromDay = ".from-"+currentDay;
@@ -228,10 +228,12 @@ $(function() {
     };
 
     
-
+    // ON CLICK OF SUBMIT BUTTON
     $(".submit-btn").click(function(){
+
         $(".monday-data,.tuesday-data, .wednesday-data,  .thursday-data, .friday-data, .saturday-data, .sunday-data").html("");
-        
+
+        // ARRAY FOR TOTAL DAYS
         var days = ["monday","tuesday", "wednesday","thursday","friday","saturday","sunday"];
         // CALLING FUNCTION FOR ALL DAY OF WEEK
         for(let i = 0; i<days.length; i++){
