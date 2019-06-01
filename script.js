@@ -159,55 +159,68 @@ $(function() {
     });
 
     function getAndAddData(day){
+        
         var fromhoursdata = eval(new String(day+"fromhours"));  // mondayfromhours 
+        fromhoursdata = [];  // empty array for from hours
         console.log(fromhoursdata);
-        fromhoursdata=[];  // empty array for from hours
 
-        // var mondayfromhours = [];
+        var fromminsdata = eval(new String(day+"frommins"));
+        fromminsdata = [];
+        console.log(fromminsdata);
 
         var tohoursdata = eval(new String(day+"tohours"));
-        console.log(fromhoursdata);
-        tohoursdata=[];
+        tohoursdata = [];
         console.log(tohoursdata);
 
-        var mondayfrommins =[];
-        var mondaytohours =[];
-        var mondaytomins =[];
-        $(".monday-from-hours").each(function() {
+
+        var tominsdata = eval(new String(day+"tomins"));
+        tominsdata = [];
+        console.log(tominsdata);
+       
+        // JQUERY SELECTORS
+        var dayfromhours = "."+day+"-from-hours";
+        var dayfrommins = "."+day+"-from-mins";
+        var daytohours = "."+day+"-to-hours";
+        var daytomins = "."+day+"-to-mins";
+
+        $(dayfromhours).each(function() {
             var response=$(this).val();
-            mondayfromhours.push(response);
+            fromhoursdata.push(response);
         });
 
-        $(".monday-from-mins").each(function() {
+        $(dayfrommins).each(function() {
             var response=$(this).val();
-            mondayfrommins.push(response);
+            fromminsdata.push(response);
         });
 
-        $(".monday-to-hours").each(function() {
+        $(daytohours).each(function() {
             var response=$(this).val();
-            mondaytohours.push(response);
+            tohoursdata.push(response);
         });
 
-        $(".monday-to-mins").each(function() {
+        $(daytomins).each(function() {
             var response=$(this).val();
-            mondaytomins.push(response);
+            tominsdata.push(response);
         });
-    
+        
+        // append selectors
+        var appendToDay = "."+day+"-data";
 
-        for(let i =0; i<mondayfromhours.length; i++){
+        for(let i =0; i<fromhoursdata.length; i++){
+            console.log(appendToDay);
 
-            var arrayfromhours = mondayfromhours[i];
-            var arrayfrommins = mondayfrommins[i];
-            var arraytohours = mondaytohours[i];
-            var arraytomins = mondaytomins[i];
+            var arrayfromhours = fromhoursdata[i];
+            var arrayfrommins = fromminsdata[i];
+            var arraytohours = tohoursdata[i];
+            var arraytomins = tominsdata[i];
 
             var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-            
-            if(i == mondayfromhours.length-1){
-                $(".monday-data").append(slottext + "");
+            console.log(slottext);
+            if(i == fromhoursdata.length-1){
+                $(appendToDay).append(slottext + "");
             }
             else{
-                $(".monday-data").append(slottext + " , ");
+                $(appendToDay).append(slottext + " , ");
             }
 
         }
@@ -218,288 +231,13 @@ $(function() {
 
     $(".submit-btn").click(function(){
         $(".monday-data,.tuesday-data, .wednesday-data,  .thursday-data, .friday-data, .saturday-data, .sunday-data").html("");
-
-
-
-        // MONDAY
-        var mondayfromhours =[];
-        var mondayfrommins =[];
-        var mondaytohours =[];
-        var mondaytomins =[];
-        $(".monday-from-hours").each(function() {
-            var response=$(this).val();
-            mondayfromhours.push(response);
-        });
-
-        $(".monday-from-mins").each(function() {
-            var response=$(this).val();
-            mondayfrommins.push(response);
-        });
-
-        $(".monday-to-hours").each(function() {
-            var response=$(this).val();
-            mondaytohours.push(response);
-        });
-
-        $(".monday-to-mins").each(function() {
-            var response=$(this).val();
-            mondaytomins.push(response);
-        });
-    
-
-        for(let i =0; i<mondayfromhours.length; i++){
-
-            var arrayfromhours = mondayfromhours[i];
-            var arrayfrommins = mondayfrommins[i];
-            var arraytohours = mondaytohours[i];
-            var arraytomins = mondaytomins[i];
-
-            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-            
-            if(i == mondayfromhours.length-1){
-                $(".monday-data").append(slottext + "");
-            }
-            else{
-                $(".monday-data").append(slottext + " , ");
-            }
-
+        
+        var days = ["monday","tuesday", "wednesday","thursday","friday","saturday","sunday"];
+        // CALLING FUNCTION FOR ALL DAY OF WEEK
+        for(let i = 0; i<days.length; i++){
+            var currentDay = days[i];
+            getAndAddData(currentDay);
         }
-
-        // TUESDAY
-        var tuesdayfromhours =[];
-        var tuesdayfrommins =[];
-        var tuesdaytohours =[];
-        var tuesdaytomins =[];
-
-        $(".tuesday-from-hours").each(function() {
-            var response=$(this).val();
-            tuesdayfromhours.push(response);
-        });
-
-        $(".tuesday-from-mins").each(function() {
-            var response=$(this).val();
-            tuesdayfrommins.push(response);
-        });
-
-        $(".tuesday-to-hours").each(function() {
-            var response=$(this).val();
-            tuesdaytohours.push(response);
-        });
-
-        $(".tuesday-to-mins").each(function() {
-            var response=$(this).val();
-            tuesdaytomins.push(response);
-        });
-    
-
-        for(let i =0; i<tuesdayfromhours.length; i++){
-
-            var arrayfromhours = tuesdayfromhours[i];
-            var arrayfrommins = tuesdayfrommins[i];
-            var arraytohours = tuesdaytohours[i];
-            var arraytomins = tuesdaytomins[i];
-
-            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-            $(".tuesday-data").append(slottext + " , ");
-        }
-
-
-        // WEDNESDAY
-        var wednesdayfromhours =[];
-        var wednesdayfrommins =[];
-        var wednesdaytohours =[];
-        var wednesdaytomins =[];
-
-        $(".wednesday-from-hours").each(function() {
-            var response=$(this).val();
-            wednesdayfromhours.push(response);
-        });
-
-        $(".wednesday-from-mins").each(function() {
-            var response=$(this).val();
-            wednesdayfrommins.push(response);
-        });
-
-        $(".wednesday-to-hours").each(function() {
-            var response=$(this).val();
-            wednesdaytohours.push(response);
-        });
-
-        $(".wednesday-to-mins").each(function() {
-            var response=$(this).val();
-            wednesdaytomins.push(response);
-        });
-    
-
-        for(let i =0; i<wednesdayfromhours.length; i++){
-
-            var arrayfromhours = wednesdayfromhours[i];
-            var arrayfrommins = wednesdayfrommins[i];
-            var arraytohours = wednesdaytohours[i];
-            var arraytomins = wednesdaytomins[i];
-
-            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-            $(".wednesday-data").append(slottext + " , ");
-        }
-
-
-        // THURSDAY
-        var thursdayfromhours =[];
-        var thursdayfrommins =[];
-        var thursdaytohours =[];
-        var thursdaytomins =[];
-
-        $(".thursday-from-hours").each(function() {
-            var response=$(this).val();
-            thursdayfromhours.push(response);
-        });
-
-        $(".thursday-from-mins").each(function() {
-            var response=$(this).val();
-            thursdayfrommins.push(response);
-        });
-
-        $(".thursday-to-hours").each(function() {
-            var response=$(this).val();
-            thursdaytohours.push(response);
-        });
-
-        $(".thursday-to-mins").each(function() {
-            var response=$(this).val();
-            thursdaytomins.push(response);
-        });
-    
-
-        for(let i =0; i<thursdayfromhours.length; i++){
-
-            var arrayfromhours = thursdayfromhours[i];
-            var arrayfrommins = thursdayfrommins[i];
-            var arraytohours = thursdaytohours[i];
-            var arraytomins = thursdaytomins[i];
-
-            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-            $(".thursday-data").append(slottext + " , ");
-        }
-
-
-
-
-         // FRIDAY
-         var fridayfromhours =[];
-         var fridayfrommins =[];
-         var fridaytohours =[];
-         var fridaytomins =[];
- 
-         $(".friday-from-hours").each(function() {
-             var response=$(this).val();
-             fridayfromhours.push(response);
-         });
- 
-         $(".friday-from-mins").each(function() {
-             var response=$(this).val();
-             fridayfrommins.push(response);
-         });
- 
-         $(".friday-to-hours").each(function() {
-             var response=$(this).val();
-             fridaytohours.push(response);
-         });
- 
-         $(".friday-to-mins").each(function() {
-             var response=$(this).val();
-             fridaytomins.push(response);
-         });
-     
- 
-        for(let i =0; i<fridayfromhours.length; i++){
-
-            var arrayfromhours = fridayfromhours[i];
-            var arrayfrommins = fridayfrommins[i];
-            var arraytohours = fridaytohours[i];
-            var arraytomins = fridaytomins[i];
-
-            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-            $(".friday-data").append(slottext + " , ");
-        }
-
-
-        // saturday
-        var saturdayfromhours =[];
-        var saturdayfrommins =[];
-        var saturdaytohours =[];
-        var saturdaytomins =[];
-
-        $(".saturday-from-hours").each(function() {
-            var response=$(this).val();
-            saturdayfromhours.push(response);
-        });
-
-        $(".saturday-from-mins").each(function() {
-            var response=$(this).val();
-            saturdayfrommins.push(response);
-        });
-
-        $(".saturday-to-hours").each(function() {
-            var response=$(this).val();
-            saturdaytohours.push(response);
-        });
-
-        $(".saturday-to-mins").each(function() {
-            var response=$(this).val();
-            saturdaytomins.push(response);
-        });
-    
-
-       for(let i =0; i<saturdayfromhours.length; i++){
-
-           var arrayfromhours = saturdayfromhours[i];
-           var arrayfrommins = saturdayfrommins[i];
-           var arraytohours = saturdaytohours[i];
-           var arraytomins = saturdaytomins[i];
-
-           var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-           $(".saturday-data").append(slottext + ", ");
-       }
-
-
-       // sunday
-       var sundayfromhours =[];
-       var sundayfrommins =[];
-       var sundaytohours =[];
-       var sundaytomins =[];
-
-       $(".sunday-from-hours").each(function() {
-           var response=$(this).val();
-           sundayfromhours.push(response);
-       });
-
-       $(".sunday-from-mins").each(function() {
-           var response=$(this).val();
-           sundayfrommins.push(response);
-       });
-
-       $(".sunday-to-hours").each(function() {
-           var response=$(this).val();
-           sundaytohours.push(response);
-       });
-
-       $(".sunday-to-mins").each(function() {
-           var response=$(this).val();
-           sundaytomins.push(response);
-       });
-   
-
-      for(let i =0; i<sundayfromhours.length; i++){
-
-          var arrayfromhours = sundayfromhours[i];
-          var arrayfrommins = sundayfrommins[i];
-          var arraytohours = sundaytohours[i];
-          var arraytomins = sundaytomins[i];
-
-          var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-          $(".sunday-data").append(slottext + " , ");
-      }
-
 
     });
         
