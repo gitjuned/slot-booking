@@ -1,8 +1,9 @@
 $(function() {
     var idCount= 1;
-
+    
     // HOUR VALIDATE FUNCTION
-    var hourValidate = function(){
+    function hourValidate(){
+
         var newFromHourId = "#from-hours-"+(idCount);
         var newToHourId = "#to-hours-"+(idCount);
 
@@ -28,7 +29,8 @@ $(function() {
     };
 
     // MINUTE VALIDATE FUNCTION
-    var minValidate = function(){
+    function minValidate(){
+    
         var newFromHourId = "#from-hours-"+(idCount);
         var newToHourId = "#to-hours-"+(idCount);
         var newFromMinId = "#from-mins-"+(idCount);
@@ -43,7 +45,7 @@ $(function() {
             var toHours = parseInt($(newToHourId+' option:selected').val(),10);
             var fromMins = parseInt($(newFromMinId+' option:selected').val(),10);
             var toMins = parseInt($(newToMinId+' option:selected').val(),10);
-           
+            
 
             $(newToMinId+ " option").each(function(){
             
@@ -70,13 +72,76 @@ $(function() {
         });
         
     };
+    
+    // ADDS DATA ON SUBMIT
+    function getAndAddData(day){
+        
+        var fromhoursdata = eval(new String(day+"fromhours"));  // mondayfromhours 
+        fromhoursdata = [];  // empty array for from hours
 
+        var fromminsdata = eval(new String(day+"frommins"));
+        fromminsdata = [];
+
+        var tohoursdata = eval(new String(day+"tohours"));
+        tohoursdata = [];
+
+        var tominsdata = eval(new String(day+"tomins"));
+        tominsdata = [];
+       
+        // JQUERY SELECTORS
+        var dayfromhours = "."+day+"-from-hours";
+        var dayfrommins = "."+day+"-from-mins";
+        var daytohours = "."+day+"-to-hours";
+        var daytomins = "."+day+"-to-mins";
+
+        $(dayfromhours).each(function() {
+            var response=$(this).val();
+            fromhoursdata.push(response);
+        });
+
+        $(dayfrommins).each(function() {
+            var response=$(this).val();
+            fromminsdata.push(response);
+        });
+
+        $(daytohours).each(function() {
+            var response=$(this).val();
+            tohoursdata.push(response);
+        });
+
+        $(daytomins).each(function() {
+            var response=$(this).val();
+            tominsdata.push(response);
+        });
+        
+        // append selector
+        var appendToDay = "."+day+"-data";
+
+        for(let i =0; i<fromhoursdata.length; i++){
+
+            var arrayfromhours = fromhoursdata[i];
+            var arrayfrommins = fromminsdata[i];
+            var arraytohours = tohoursdata[i];
+            var arraytomins = tominsdata[i];
+
+            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
+            
+            if(i == fromhoursdata.length-1){
+                $(appendToDay).append(slottext + "");
+            }
+            else{
+                $(appendToDay).append(slottext + " , ");
+            }
+
+        }
+
+    };
 
     // ON CLICK OF ADD BUTTON
     $(".add-btn").click(function(){
         var currentDay = $(this).data('day');
         var fromDay = ".from-"+currentDay;
-        var toDay = ".to-"+$(this).data('day');
+        var toDay = ".to-"+currentDay;
     
         console.log("SLOT ADDED FOR: "+fromDay); 
         console.log("SLOT ADDED FOR: "+toDay);       
@@ -157,75 +222,6 @@ $(function() {
         idCount++; 
 
     });
-
-    function getAndAddData(day){
-        
-        var fromhoursdata = eval(new String(day+"fromhours"));  // mondayfromhours 
-        fromhoursdata = [];  // empty array for from hours
-        console.log(fromhoursdata);
-
-        var fromminsdata = eval(new String(day+"frommins"));
-        fromminsdata = [];
-        console.log(fromminsdata);
-
-        var tohoursdata = eval(new String(day+"tohours"));
-        tohoursdata = [];
-        console.log(tohoursdata);
-
-
-        var tominsdata = eval(new String(day+"tomins"));
-        tominsdata = [];
-        console.log(tominsdata);
-       
-        // JQUERY SELECTORS
-        var dayfromhours = "."+day+"-from-hours";
-        var dayfrommins = "."+day+"-from-mins";
-        var daytohours = "."+day+"-to-hours";
-        var daytomins = "."+day+"-to-mins";
-
-        $(dayfromhours).each(function() {
-            var response=$(this).val();
-            fromhoursdata.push(response);
-        });
-
-        $(dayfrommins).each(function() {
-            var response=$(this).val();
-            fromminsdata.push(response);
-        });
-
-        $(daytohours).each(function() {
-            var response=$(this).val();
-            tohoursdata.push(response);
-        });
-
-        $(daytomins).each(function() {
-            var response=$(this).val();
-            tominsdata.push(response);
-        });
-        
-        // append selectors
-        var appendToDay = "."+day+"-data";
-
-        for(let i =0; i<fromhoursdata.length; i++){
-            console.log(appendToDay);
-
-            var arrayfromhours = fromhoursdata[i];
-            var arrayfrommins = fromminsdata[i];
-            var arraytohours = tohoursdata[i];
-            var arraytomins = tominsdata[i];
-
-            var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
-            console.log(slottext);
-            if(i == fromhoursdata.length-1){
-                $(appendToDay).append(slottext + "");
-            }
-            else{
-                $(appendToDay).append(slottext + " , ");
-            }
-
-        }
-
-    };
 
     
     // ON CLICK OF SUBMIT BUTTON
