@@ -159,9 +159,17 @@ $(function() {
     });
 
     function getAndAddData(day){
-    h
-        var day = day
-        var mondayfromhours = [];
+        var fromhoursdata = eval(new String(day+"fromhours"));  // mondayfromhours 
+        console.log(fromhoursdata);
+        fromhoursdata=[];  // empty array for from hours
+
+        // var mondayfromhours = [];
+
+        var tohoursdata = eval(new String(day+"tohours"));
+        console.log(fromhoursdata);
+        tohoursdata=[];
+        console.log(tohoursdata);
+
         var mondayfrommins =[];
         var mondaytohours =[];
         var mondaytomins =[];
@@ -204,8 +212,9 @@ $(function() {
 
         }
 
-    }
+    };
 
+    
 
     $(".submit-btn").click(function(){
         $(".monday-data,.tuesday-data, .wednesday-data,  .thursday-data, .friday-data, .saturday-data, .sunday-data").html("");
