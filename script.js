@@ -76,17 +76,17 @@ $(function() {
     // ADDS DATA ON SUBMIT
     function getAndAddData(day){
         
-        var fromhoursdata = eval(new String(day+"fromhours"));  // mondayfromhours 
-        fromhoursdata = [];  // empty array for from hours
+        // var fromhoursdata = eval(new String(day+"fromhours"));  // mondayfromhours 
+        var fromhoursdata = [];  // empty array for from hours
 
-        var fromminsdata = eval(new String(day+"frommins"));
-        fromminsdata = [];
+        // var fromminsdata = eval(new String(day+"frommins"));
+        var fromminsdata = [];
 
-        var tohoursdata = eval(new String(day+"tohours"));
-        tohoursdata = [];
+        // var tohoursdata = eval(new String(day+"tohours"));
+        var tohoursdata = [];
 
-        var tominsdata = eval(new String(day+"tomins"));
-        tominsdata = [];
+        // var tominsdata = eval(new String(day+"tomins"));
+        var tominsdata = [];
        
         // JQUERY SELECTORS
         var dayfromhours = "."+day+"-from-hours";
@@ -127,7 +127,7 @@ $(function() {
             var slottext = arrayfromhours+":"+arrayfrommins+"-"+arraytohours+":"+arraytomins;
             
             if(i == fromhoursdata.length-1){
-                $(appendToDay).append(slottext + "");
+                $(appendToDay).append(slottext);
             }
             else{
                 $(appendToDay).append(slottext + " , ");
